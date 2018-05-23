@@ -1,0 +1,23 @@
+{
+  "name": "moive-trailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start":"node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manba24/moive-trailer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manba24/moive-trailer/issues"
+  },
+  "homepage": "https://github.com/manba24/moive-trailer#readme",
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
+}
