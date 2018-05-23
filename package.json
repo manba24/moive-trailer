@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "start":"node server/index.js",
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/manba24/moive-trailer#readme",
   "dependencies": {
-    "koa": "^2.5.1"
+    "ejs": "^2.6.1",
+    "koa": "^2.5.1",
+    "pug": "^2.0.3"
   }
 }
