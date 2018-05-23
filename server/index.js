@@ -3,7 +3,7 @@ const app = new Koa()
 const views = require('koa-views')
 const { resolve } = require('path')
 
-
+//使用views中间件
 app.use(views(resolve(__dirname, './views'), {
     extension: 'pug'
 }))
