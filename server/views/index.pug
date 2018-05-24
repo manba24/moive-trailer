@@ -4,10 +4,45 @@ block title
     title koa首页
 
 block content
-    .container
-        .row
-            .col-md-8
-                h1 Hi #{you}
-                p This is #{me}
-            .col-md-4
-                p 测试模板引擎中间件
+    include ./includes/header
+    .container-fluid
+        .col-12.col-md-3
+        
+        .sidebar
+        .content
+            .row
+                .col-md-6
+                    .car
+                        img.card-img-top(src="" data-video='')
+                        .card-body
+                            h4.card-title 电影标题
+                            p.card-desc 电影表述
+                        .card-footer
+                            small.text-muted 1天前更新
+                .col-md-6
+                    .car
+                        img.card-img-top(src="" data-video='')
+                        .card-body
+                            h4.card-title 电影标题
+                            p.card-desc 电影表述
+                        .card-footer
+                            small.text-muted 1天前更新
+            .row
+                .col-md-6
+                    .car
+                        img.card-img-top(src="" data-video='')
+                        .card-body
+                            h4.card-title 电影标题
+                            p.card-desc 电影表述
+                        .card-footer
+                            small.text-muted 1天前更新
+                .col-md-6
+                    .car
+                        img.card-img-top(src="" data-video='')
+                        .card-body
+                            h4.card-title 电影标题
+                            p.card-desc 电影表述
+                        .card-footer
+                            small.text-muted 1天前更新
+        
+        
