@@ -1,5 +1,3 @@
-
-
 const rp = require('request-promise-native')
 
 async function fetchMovie(item) {
