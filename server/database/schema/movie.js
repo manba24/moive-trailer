@@ -7,7 +7,7 @@ const moiveSchema = new Schema({
     doubanId:String,
     rate:Number,
     title:String,
-    summaru:String,
+    summary:String,
     video:String,
     poster:String,
     cover:String,
@@ -32,6 +32,16 @@ const moiveSchema = new Schema({
         }
     }
 
+})
+
+moiveSchema.pre('save',next=>{
+    if(this.isNew){
+        this.meta.createdAt = this.meta.updatedAt = Date.now()
+    }else{
+        this.meta.updatedAt = Date.now()
+    }
+
+    next()
 })
 
 mongoose.model('Moive',moiveSchema)
