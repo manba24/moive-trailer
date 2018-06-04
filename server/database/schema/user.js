@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed
 const SALT_WORK_FACTOR = 10
 const MAX_LOGIN_ATTEMPTS = 5
-const LOCK_TIME = 2 * 60 * 60 * 10000
+const LOCK_TIME = 2 * 60 * 60 * 1000
 const userSchema = new Schema({
     doubanId:{
         unique: true,
