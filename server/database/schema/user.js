@@ -46,10 +46,10 @@ const userSchema = new Schema({
     }
 
 })
-userSchema.virtual('isLocked').get(() => {
+userSchema.virtual('isLocked').get(function() {
     return this.lockUntil && this.lockUntil > Date.now()
 })
-userSchema.pre('save', next => {
+userSchema.pre('save', function(next){
     if (!user.isModified('password')) {
         return next()
     }

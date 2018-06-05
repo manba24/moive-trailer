@@ -10,7 +10,7 @@ const categorySchema = new Schema({
     },
     category:{
         type:ObjectId,
-        ref:'Moive'
+        ref:'Movie'
     },
     meta:{
         createdAt:{
@@ -25,7 +25,7 @@ const categorySchema = new Schema({
 
 })
 
-categorySchema.pre('save',next=>{
+categorySchema.pre('save',function(next){
     if(this.isNew){
         this.meta.createdAt = this.meta.updatedAt = Date.now()
     }else{

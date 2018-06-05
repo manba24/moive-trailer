@@ -9,11 +9,8 @@ const { connect,initSchemas } = require('./database/init')
     await connect()
     initSchemas()
 
-    const Moive = mongoose.model('Moive')
-
-    const moives = await Moive.find({})
-
-    console.log(moives)
+    // require('./tasks/movie')
+    require('./tasks/api')
 
 })()
 //使用views中间件
