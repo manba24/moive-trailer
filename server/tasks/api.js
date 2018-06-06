@@ -51,7 +51,8 @@ async function fetchmovie(item) {
                     let cat = await Category.findOne({
                         name: item
                     })
-
+                    console.log(cat)
+                    console.log(movie._id)
                     if (!cat) {
                         cat = new Category({
                             name: item,

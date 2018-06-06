@@ -4,15 +4,19 @@ const mongoose = require('mongoose')
 const views = require('koa-views')
 const { resolve } = require('path')
 const { connect,initSchemas } = require('./database/init')
+const router = require('./routes')
 ;(async()=>{
    
     await connect()
     initSchemas()
 
     // require('./tasks/movie')
-    require('./tasks/api')
+    // require('./tasks/api')
 
 })()
+app.use(router.routes())
+    .use(router.allowedMethods())
+
 //使用views中间件
 app.use(views(resolve(__dirname, './views'), {
     extension: 'pug'
