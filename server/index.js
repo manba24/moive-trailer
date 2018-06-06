@@ -14,8 +14,8 @@ const router = require('./routes')
     // require('./tasks/api')
 
 })()
-app.use(router.routes())
-    .use(router.allowedMethods())
+// app.use(router.routes())
+//     .use(router.allowedMethods())
 
 //使用views中间件
 app.use(views(resolve(__dirname, './views'), {
