@@ -6,7 +6,7 @@ const router = new Router()
 router.get('/movies/all',async (ctx,next)=>{
     const Movie = mongoose.model('Movie')
     const movies =await Movie.find({}).sort({
-        'meta.created':-1
+        'meta.createdAt':-1
     })
     ctx.body = {
         movies
