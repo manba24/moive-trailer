@@ -1,37 +1,40 @@
 const Koa = require('koa')
-const app = new Koa()
 const mongoose = require('mongoose')
 const views = require('koa-views')
 const { resolve } = require('path')
-const { connect,initSchemas } = require('./database/init')
-const router = require('./routes')
-;(async()=>{
-   
+const { connect, initSchemas } = require('./database/init')
+const R = require('ramda')
+const MIDDLEWARES = ['router', 'parcel']
+// const router = require('./routes')
+const useMiddlewares = (app) => {
+    R.map(
+        R.compose(
+            R.forEachObjIndexed(initWith => initWith(app)),
+            require,
+            name => path.resolve(__dirname, `./middlewares/${name}`),
+        )
+    )(MIDDLEWARES)
+};
+(async () => {
+
     await connect()
     initSchemas()
-
     // require('./tasks/movie')
     // require('./tasks/api')
+    const app = new Koa()
+    console.log('useMiddlewares')
+    await useMiddlewares(app)
+    console.log(router)
+
+    app.listen(3000, (err) => {
+        if (err) {
+            throw err
+        }
+        console.log('server is start at 3000')
+    })
 
 })()
-// app.use(router.routes())
-//     .use(router.allowedMethods())
 
-//使用views中间件
-app.use(views(resolve(__dirname, './views'), {
-    extension: 'pug'
-}))
-app.use(async (ctx, next) => {
-    await ctx.render('index', {
-        you: 'hello',
-        me: 'jay'
-    })
-})
 
-app.listen(3000,(err)=>{
-    if(err){
-        console.log(err)
-    }
 
-    console.log('server is start at 3000')
-})
+

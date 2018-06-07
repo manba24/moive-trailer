@@ -45,6 +45,7 @@ const router = conf => (target, key, descriptor) => {
         ...conf
     }, target[key])
 }
+
 export const controller = path => target => (target.prototype[symbolPrefix] = path)
 
 export const get = path => router({
